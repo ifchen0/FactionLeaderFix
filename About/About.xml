@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Faction Leader Fix</name>
+  <author>ifchen0</author>
+  <packageId>ifchen0.factionleaderfix</packageId>
+  <supportedVersions><li>1.6</li></supportedVersions>
+  <description>Restores missing faction leaders when a save is loaded.
+
+Fixes this error after loading a save:
+Faction leader for [faction name] is null.
+
+Cause: Every visible humanlike faction is supposed to have a leader. If the leader reference is lost (for example the leader pawn was removed from the world by another mod), the save stores a null leader. Vanilla FactionTick only logs the error and never repairs it.
+
+Fix: Calls vanilla's own TryGenerateNewLeader() for any faction that should have a leader but has none, the same way vanilla replaces a leader who died. Each faction is tried at most once per session.
+
+Notes:
+- Safe to add to or remove from an existing save. The new leader is saved normally.
+- No letter is sent. Each repaired faction writes one line to the log.
+- Load after Harmony.
+
+This mod was developed with the help of AI coding tools (Claude Code). Full source code is included in the Source folder for review.</description>
+  <modDependencies>
+    <li><packageId>brrainz.harmony</packageId><displayName>Harmony</displayName><steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl></li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+</ModMetaData>
