@@ -3,6 +3,7 @@
   <name>Faction Leader Fix</name>
   <author>ifchen0</author>
   <packageId>ifchen0.factionleaderfix</packageId>
+  <url>https://github.com/ifchen0/FactionLeaderFix</url>
   <supportedVersions><li>1.6</li></supportedVersions>
   <description>Restores missing faction leaders when a save is loaded.
 
